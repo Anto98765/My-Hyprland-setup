@@ -1,0 +1,18 @@
+{
+    "label" : "hibernate",
+    "action" : "systemctl hibernate",
+    "text" : "",
+    "keybind" : "h"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "",
+    "keybind" : "s"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "",
+    "keybind" : "r"
+}

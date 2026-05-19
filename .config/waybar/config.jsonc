@@ -1,0 +1,165 @@
+{
+    "layer": "top",
+    "modules-left": [
+        "group/start",
+        "tray"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+        
+    ],
+    "modules-right": [
+        "group/control",
+        "power-profiles-daemon",
+        "clock"
+        ],
+    //modules-------------------------
+    "battery": {
+        "tooltip-format": "Battery : {capacity} %\nRemain : {time}",
+        "states": {
+            "charged": 100,
+            "mid":      40,
+            "critical": 20
+        },
+        "format": "{capacity}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-icons": [
+                "󰁺",
+                "󰁼",
+                "󰁾",
+                "󰂀",
+                "󰁹"
+            ],
+        "on-click": "swaync-client -t -sw"
+            
+        
+    },
+    "clock": {
+        "format": "{:%I : %M %p}",
+        "format-alt": "{:%d %m %Y}",
+        "interval": 1 ,
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5"
+        },
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "*": 5, // 5 workspaces by default on every monitor
+            "HDMI-A-1": 3 // but only three on HDMI-A-1
+        }
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "format-muted": "",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "tooltip-format": "Volume level : {volume}%",
+        "scroll-step": 1,
+        "on-click": "swaync-client -t -sw",
+        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+    "network": {
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "networkmanager_dmenu",
+        "interface": "wlo1",
+        "format": "",
+        "format-wifi": "",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid}  ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected  ",
+        "max-length": 50
+    },
+    "bluetooth": {
+        "on-click": "blueman-manager",
+        "format": "",
+        "format-disabled": "",
+        "format-connected": " {num_connections} connected",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile : {profile}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "custom/appmenu": {
+        "format": "{icon}",
+        "on-click": "~/.config/rofi/launcher.sh",
+        "tooltip": false,
+        "format-icons": {
+            "default": "󰣇"
+        }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/notification": {
+        "tooltip": true,
+        "format": "<span size='13pt'>{icon}</span>",
+        "format-icons": {
+            "notification": "",
+            "none": "󰂚",
+            "dnd-notification": "󰂠",
+            "dnd-none": "󰪓",
+            "inhibited-notification": "󰂛",
+            "inhibited-none": "󰪑",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "memory": {
+        "format": "   {}% ",
+        "on-click": "kitty btop"
+    },
+      "group/control": {
+    "modules": ["network", "pulseaudio", "battery"],
+    "orientation": "horizontal"
+  },
+        "group/start": {
+    "modules": ["custom/appmenu", "memory"],
+    "orientation": "horizontal"
+  }
+}

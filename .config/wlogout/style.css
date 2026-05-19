@@ -1,0 +1,57 @@
+@import "/home/$USER/.config/waybar/colors.css";
+
+* {
+	background-image: none;
+	box-shadow: none;
+	font-family: Roboto,  "Fira Sans Semibold", "Font Awesome 7 Free", "Font Awesome 7 Brands", "Font Awesome 6 Free", "Font Awesome 6 Brands", FontAwesome, "Material Icons", Roboto, Helvetica, Arial, sans-serif;
+}
+
+window {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+button {
+    border-radius: 100px;
+    color: #FFFFFF;
+	background-color: rgba( 30, 30, 30, 0.5);
+}
+
+
+
+ button:focus,button:active, button:hover {
+	border-radius: 100px;
+	color: rgba(66, 66, 66, 0.9);
+	text-decoration-color: rgba(66, 66, 66, 0.9);
+	border: 5px solid rgba(66, 66, 66, 0.896);
+	background-color: @primary;
+	background-size: 60%;
+
+}
+
+
+#hibernate {
+	margin: 55px 80px 55px 0px;
+}
+
+#hibernate label{
+	font-size: 120;
+	margin: 0px 0px 32px 0px;
+}
+
+#shutdown {
+	margin: 55px 80px 55px 80px;
+}
+
+#shutdown label {
+	font-size: 120px;
+	margin: 0px 1px 30px 0px;
+}
+
+#reboot {
+	margin: 55px 0px 55px 80px;
+}
+
+#reboot label {
+	font-size: 130px;
+	margin: 0px 25px 7px 10px;
+}
