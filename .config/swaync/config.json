@@ -1,0 +1,75 @@
+{
+ 
+    "$schema": "/etc/xdg/swaync/configSchema.json",
+    "positionX": "right",
+    "positionY": "top",
+	"layer": "overlay",
+    "control-center-margin-top": 10,
+    "control-center-margin-bottom": 10,
+    "control-center-margin-right": 10,
+    "control-center-margin-left": 10,
+    "notification-icon-size": 100,
+    "notification-body-image-height": 100,
+    "notification-body-image-width": 200,
+    "timeout": 6,
+    "timeout-low": 5,
+    "timeout-critical": 0,
+    "fit-to-screen": false,
+    "control-center-width": 300,
+    "control-center-height": 650,
+    "notification-window-width": 400,
+    "notification-window-height": 400,
+    "keyboard-shortcuts": true,
+    "image-visibility": "when-available",
+    "transition-time": 200,
+    "hide-on-clear": true,
+    "hide-on-action": true,
+    "script-fail-notify": true,
+    "notification-2fa-action": false,
+    "expand-on-hover": true,
+    "notification-inline-replies": true,
+    "widgets": [
+        "title",
+        "notifications"		
+        
+    ],
+    "widget-config": {
+        "title": {
+            "text": "Notifications",
+            "clear-all-button": true,
+            "button-text": "󰆴 Clear All"
+        },
+        "label": {
+            "max-lines": 1,
+            "text": "Notification Center"
+        },
+        "volume": {
+            "label": " ",
+			"show-per-app": false
+        },
+        "backlight": {
+            "label": " ",
+            "device": "intel_backlight"
+        },
+        "buttons-grid": {
+            "actions": [
+                {
+                    "label": " ",
+                    "command": "swaync-client -t -sw && networkmanager_dmenu"
+                },
+                {
+                    "label": " ",
+                    "command": "swaync-client -t -sw && blueman-manager"
+                },
+                {
+                    "label": "",
+                    "command": "swaync-client -t -sw && obs"
+                },
+                {
+                    "label": "󰌾",
+                    "command": "swaync-client -t -sw && $HOME/.config/hypr/lock_anim.sh"
+                }
+            ]
+        }
+    }
+}
