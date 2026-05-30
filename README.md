@@ -154,7 +154,7 @@ chsh -s $(which fish)
 
 
 ### 4. **Customization Guide**
-```markdown
+
 ## 🎨 Customization
 
 ### Change Color Scheme
