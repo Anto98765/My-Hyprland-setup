@@ -20,6 +20,16 @@
 
 ---
 
+## ✨ Features
+
+- **Smooth Animations** — Custom Hyprland animations for elegant transitions
+- **Color Scheme Generator** — Dynamic color generation with matugen
+- **Wallpaper Integration** — Custom Rofi picker for instant theme switching
+- **Status Bar** — Minimal yet functional Waybar with quick module toggles
+- **Notifications** — SwayNC for non-intrusive notifications
+
+---
+
 ## 📦 Stack
 
 | Role | Tool |
@@ -138,6 +148,25 @@ chsh -s $(which fish)
 
 >[!IMPORTANT]
 > The status pill in the waybar when left click on it opens swaync, and when you right click on the module (wifi,sound) opens the menu of the module.
+
+---
+
+
+
+### 4. **Customization Guide**
+```markdown
+## 🎨 Customization
+
+### Change Color Scheme
+1. Put wallpaper in `~/Pictures/wallpapers/`
+2. Press `SUPER + W` → Select wallpaper
+3. Colors auto-generate via matugen
+
+### Modify Keybindings
+Edit `~/.config/hypr/hyprland.conf`
+
+### Change Theme
+Run GTK settings → Select **Tahoe-Dark** theme
 
 ---
 
